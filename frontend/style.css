@@ -1,0 +1,201 @@
+/* ---------- Global Reset & Base ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Modern blue/purple gradient background (NOT plain white) */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+
+    /* Center the card horizontally and vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    color: #2d2d2d;
+}
+
+/* ---------- Main Application Card ---------- */
+.app-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px 35px;
+    width: 100%;
+    max-width: 480px;
+
+    /* Soft shadow around the card */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Comfortable spacing between elements */
+    text-align: center;
+}
+
+/* ---------- Title & Subtitle ---------- */
+h1 {
+    font-size: 2rem;
+    color: #4a3f8f;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+
+.subtitle {
+    font-size: 1.05rem;
+    color: #6b6b8a;
+    margin-top: -8px;
+    margin-bottom: 6px;
+}
+
+/* ---------- Input Labels ---------- */
+.input-label {
+    text-align: left;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #4a3f8f;
+    margin-bottom: -10px;
+}
+
+/* ---------- Large Input Field ---------- */
+.large-input {
+    width: 100%;
+    padding: 16px 18px;
+    font-size: 1.25rem;
+    border: 2px solid #d6d1f0;
+    border-radius: 12px;
+    outline: none;
+    background: #f9f8ff;
+    color: #2d2d2d;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.large-input:focus {
+    border-color: #764ba2;
+    box-shadow: 0 0 0 4px rgba(118, 75, 162, 0.15);
+    background: #ffffff;
+}
+
+.large-input::placeholder {
+    color: #a5a0c0;
+}
+
+/* ---------- Large Dropdown / Select ---------- */
+.large-select {
+    width: 100%;
+    padding: 16px 18px;
+    font-size: 1.2rem;
+    border: 2px solid #d6d1f0;
+    border-radius: 12px;
+    outline: none;
+    background: #f9f8ff;
+    color: #2d2d2d;
+    cursor: pointer;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    appearance: none;
+    /* Custom arrow */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a3f8f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 18px;
+    padding-right: 48px;
+}
+
+.large-select:focus {
+    border-color: #764ba2;
+    box-shadow: 0 0 0 4px rgba(118, 75, 162, 0.15);
+    background-color: #ffffff;
+}
+
+/* ---------- Calculate Button ---------- */
+.calculate-btn {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 6px;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+/* Simple hover effect on the button */
+.calculate-btn:hover {
+    filter: brightness(1.08);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(102, 126, 234, 0.5);
+}
+
+.calculate-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 14px rgba(102, 126, 234, 0.4);
+}
+
+/* ---------- Result Area ---------- */
+.result-area {
+    min-height: 60px;
+    padding: 16px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #4a3f8f;
+    background: #f1eefc;
+    border: 2px dashed #c9bff0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-break: break-word;
+    transition: all 0.3s ease;
+}
+
+/* ---------- Error / Message Area ---------- */
+.message-area {
+    min-height: 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #c0392b;
+    text-align: center;
+    word-break: break-word;
+}
+
+/* ---------- Responsive Design for Smaller Screens ---------- */
+@media (max-width: 480px) {
+    .app-container {
+        padding: 28px 20px;
+        border-radius: 16px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+    }
+
+    .large-input,
+    .large-select {
+        font-size: 1.1rem;
+        padding: 14px 16px;
+    }
+
+    .calculate-btn {
+        font-size: 1.15rem;
+        padding: 16px;
+    }
+
+    .result-area {
+        font-size: 1.2rem;
+    }
+}

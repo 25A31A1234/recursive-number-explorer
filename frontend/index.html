@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursive Number Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-container">
+        <h1>🔢 Recursive Number Explorer</h1>
+        <p class="subtitle">Explore numbers using recursion</p>
+
+        <label for="numberInput" class="input-label">Number</label>
+        <input
+            type="number"
+            id="numberInput"
+            class="large-input"
+            placeholder="Enter a number"
+            step="any"
+        >
+
+        <label for="operationSelect" class="input-label">Select Operation</label>
+        <select id="operationSelect" class="large-select">
+            <option value="sumOfDigits">Sum of Digits</option>
+            <option value="reverseNumber">Reverse Number</option>
+            <option value="countDigits">Count Digits</option>
+            <option value="palindromeCheck">Palindrome Check</option>
+            <option value="factorial">Factorial</option>
+            <option value="power">Power</option>
+            <option value="fibonacci">Fibonacci</option>
+        </select>
+
+        <button id="calculateBtn" class="calculate-btn" onclick="calculate()">Calculate</button>
+
+        <div id="resultArea" class="result-area">
+            <!-- Result will be displayed here -->
+        </div>
+
+        <div id="messageArea" class="message-area">
+            <!-- Error or message will be displayed here -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
